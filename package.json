@@ -1,0 +1,53 @@
+{
+  "name": "py-inline-sql",
+  "displayName": "py-inline-sql",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "scripts": {
+    "convert": "node ./convert.js"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "inline-sql",
+        "aliases": [
+          "inline-sql",
+          "inline-sql"
+        ],
+        "extensions": [
+          ".psql"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "inline-sql",
+        "scopeName": "source.py",
+        "path": "./syntaxes/inline-sql.tmLanguage.json"
+      },
+      {
+        "path": "./syntaxes/sql-highlighter.json",
+        "scopeName": "highlight-string-code",
+        "injectTo": [
+          "source.python"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.sql": "sql"
+        },
+        "tokenTypes": {
+          "meta.*": "other"
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
