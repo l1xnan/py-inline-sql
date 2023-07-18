@@ -1,34 +1,34 @@
 {
-    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "inline-sql",
-    "patterns": [
+  "scopeName": "highlight-string-code",
+  "name": "source.stringcode",
+  "injectionSelector": "L:source - (meta.embedded), L:text - (meta.embedded)",
+  "patterns": null,
+  "repository": {
+    "sql-comment": {
+      "patterns": [
         {
-            "include": "#keywords"
-        },
-        {
-            "include": "#strings"
+          "match": "--.*$",
+          "name": "comment.line.double-dash.sql"
         }
-    ],
-    "repository": {
-        "keywords": {
-            "patterns": [
-                {
-                    "name": "keyword.control.inline-sql",
-                    "match": "\\b(if|while|for|return)\\b"
-                }
-            ]
-        },
-        "strings": {
-            "name": "string.quoted.double.inline-sql",
-            "begin": "('''|\"\"\")",
-            "end": "(\\1)",
-            "patterns": [
-                {
-                    "name": "constant.character.escape.inline-sql",
-                    "match": "(?im)(--sql.*)"
-                }
-            ]
-        }
+      ]
     },
-    "scopeName": "source.py"
+    "inline-sql-stmt": {
+      "patterns": [
+        {
+          "begin": "(?im)\\b(SELECT|INSERT INTO|DELETE|UPDATE|CREATE TABLE|CREATE INDEX|CREATE VIEW|CREATE OR REPLACE|FROM)\\b",
+          "beginCaptures": {
+            "2": {
+              "name": "keyword.sql"
+            }
+          },
+          "end": "(?=\"\"\")",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

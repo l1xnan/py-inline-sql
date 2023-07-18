@@ -1,18 +1,65 @@
-$schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
-name: inline-sql
+scopeName: highlight-string-code
+name: source.stringcode
+injectionSelector: L:source - (meta.embedded), L:text - (meta.embedded)
+# injectionSelector: 
+  # - string.quoted.multi.python
+#   - string.quoted.single.python
 patterns:
-  - include: "#keywords"
-  - include: "#strings"
+  # - include: "#inline-sql-stmt"
+  # - begin: (?i)(["'])\b(SELECT|INSERT INTO|DELETE|UPDATE|CREATE TABLE|CREATE INDEX|FROM)\b
+  #   beginCaptures:
+  #     "2":
+  #       name: keyword.sql
+  #   end: (\1)
+  #   patterns:
+  #     - include: source.sql
+  # - begin: ("|')
+  #   end: '[^"''](\1)[^"'']'
+  #   patterns:
+  #   - include: "#inline-sql-stmt"
+
+  # - begin: "#\\s*sql\\s*$"
+  #   end: (?<=\s*""")
+  #   patterns:
+  #     - begin: ^\s*(""")$
+  #       beginCaptures:
+  #         "1":
+  #           name: string.quoted.multi.python
+  #       end: ^\s*(""")$
+  #       endCaptures:
+  #         "1":
+  #           name: string.quoted.multi.python
+  #       patterns:
+  #         - include: source.sql
+  # - begin: (""")\s*(--sql)*$
+  #   end: (?<=\s*""")
+  #   patterns:
+  #     - begin: (?i)\b(SELECT|INSERT INTO|DELETE|UPDATE|CREATE TABLE|CREATE INDEX|FROM)\b
+  #       beginCaptures:
+  #         "1": { name: keyword.sql }
+  #       end: ^\s*(""")\s*$
+  #       endCaptures:
+  #         "1": { name: string.quoted.multi.python }
+  #       patterns:
+  #         - include: source.sql
+  # - begin: ("""|''')--sql
+  #   end: (\1)
+  #   patterns:
+  #     - include: inline-sql-stmt
+
 repository:
-  keywords:
+  sql-comment:
     patterns:
-      - name: keyword.control.inline-sql
-        match: \b(if|while|for|return)\b
-  strings:
-    name: string.quoted.double.inline-sql
-    begin: ('''|""")
-    end: (\1)
+      - match: --.*$
+        name: comment.line.double-dash.sql
+
+  inline-sql-stmt:
     patterns:
-      - name: constant.character.escape.inline-sql
-        match: (?im)(--sql.*)
-scopeName: source.py
+      - begin: (?im)\b(SELECT|INSERT INTO|DELETE|UPDATE|CREATE TABLE|CREATE INDEX|CREATE VIEW|CREATE OR REPLACE|FROM)\b
+        beginCaptures:
+          # "1": { name: comment.line.double-dash.sql }
+          "2": { name: keyword.sql }
+        end: (?=""")
+        patterns:
+          - include: source.sql
+          # - match: '.'

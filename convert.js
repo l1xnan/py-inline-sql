@@ -10,7 +10,7 @@ function yaml2json(file) {
 
     fs.writeFile(
       path.join("./syntaxes", file.replace(".yaml", ".json")),
-      JSON.stringify(doc, null, 4),
+      JSON.stringify(doc, null, 2),
       (err) => {
         if (err) {
           console.error(err);
