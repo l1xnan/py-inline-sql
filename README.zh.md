@@ -1,8 +1,8 @@
 # Inline SQL for Python
 
-Syntax highlight and format SQL strings embedded in Python strings.
+为嵌入在Python字符串中的SQL提供代码高亮和格式化功能
 
-## Features
+## 特性
 
 1. Adds syntax highlight support SQL strings embedded in Python strings.
 2. Format SQL strings embedded in Python strings.
@@ -32,7 +32,7 @@ Fixed issue #.
 
 Added features X, Y, and Z.
 
-## Related
+## 参考
 
 - [better-python-string-sql](https://github.com/Submersible/better-python-string-sql)
 - [SQLTools](https://github.com/mtxr/vscode-sqltools)
