@@ -24,7 +24,7 @@
     "commands": [
       {
         "command": "inline-sql-py.sqlInlineFormat",
-        "title": "SQL Inline Format"
+        "title": "Inline SQL Format"
       }
     ],
     "grammars": [
@@ -45,14 +45,15 @@
           "command": "inline-sql-py.sqlInlineFormat",
           "when": "editorHasSelection"
         }
+      ],
+      "editor/context": [
+        {
+          "command": "inline-sql-py.sqlInlineFormat",
+          "when": "editorHasSelection",
+          "group": "1_modification"
+        }
       ]
-    },
-    "editor/context": [
-      {
-        "command": "inline-sql-py.sqlInlineFormat",
-        "when": "editorHasSelection"
-      }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
