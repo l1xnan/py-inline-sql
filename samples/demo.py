@@ -13,8 +13,7 @@ sql = """--sql
 select * from demo;
 """
 
-sql = """
---sql
+sql = """--sql
 select * from demo;
 """
 

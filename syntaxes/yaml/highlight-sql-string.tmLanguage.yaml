@@ -1,0 +1,26 @@
+fileTypes:
+  - py
+injectionSelector: L:string.quoted.multi.python, L:string.quoted.single.python,
+  L:meta.fstring.python - (comment.line.number-sign.python,
+  punctuation.definition.comment.python)
+patterns:
+  - name: meta.embedded.block.sql
+    begin: \s*((?i)(explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace))
+    end: ;|(?="""|"|--|((?i)(explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace)))
+    beginCaptures:
+      "1":
+        name: keyword.other.DML.sql
+    patterns:
+      - include: source.sql
+      - include: source.python#fstring-guts
+  - name: meta.embedded.block.sql
+    begin: \s*(--[^"\n\r\{\}\\]*)
+    end: (?="|\n|\r)
+    beginCaptures:
+      "0":
+        name: comment.line.double-dash.sql
+    patterns:
+      - include: source.python#fstring-guts
+      - match: '[^"\n\r\{\}\\]*'
+        name: comment.line.double-dash.sql
+scopeName: python-sql.injection

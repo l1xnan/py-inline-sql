@@ -17,40 +17,24 @@
       {
         "id": "inline-sql",
         "aliases": [
-          "inline-sql",
           "inline-sql"
         ],
         "extensions": [
-          ".psql"
+          ".py",
+          ".ipynb"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "path": "./syntaxes/inline-sql.tmLanguage.json",
-        "scopeName": "highlight-string-code",
+        "path": "./syntaxes/highlight-sql-string.tmLanguage.json",
+        "scopeName": "python-sql.injection",
         "injectTo": [
           "source.python"
         ],
         "embeddedLanguages": {
           "meta.embedded.block.sql": "sql"
-        },
-        "tokenTypes": {
-          "meta.*": "other"
-        }
-      },
-      {
-        "path": "./syntaxes/highlight-string-code.json",
-        "scopeName": "sql-string-highlight",
-        "injectTo": [
-          "source.python"
-        ],
-        "embeddedLanguages": {
-          "meta.embedded.block.sql": "sql"
-        },
-        "tokenTypes": {
-          "meta.*": "other"
         }
       }
     ]

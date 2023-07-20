@@ -15,12 +15,6 @@
     },
     {
       "include": "#highlight-string-sql"
-    },
-    {
-      "include": "#highlight-string-hive"
-    },
-    {
-      "include": "#highlight-string-yaml"
     }
   ],
   "repository": {
