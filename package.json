@@ -72,6 +72,9 @@
     "typescript": "^5.1.3"
   },
   "dependencies": {
+    "@sqltools/formatter": "^1.2.5",
+    "prettier": "^3.0.0",
+    "prettier-plugin-sql-cst": "^0.8.2",
     "sql-formatter": "^12.2.3"
   }
 }

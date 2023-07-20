@@ -18,12 +18,29 @@ select * from demo;
 """
 
 
+table = "demo"
+
 if True:
-    sql = """
-    SELECT * from demo;
+    sql = f"""
+    SELECT * from { table };
     """
 
+    jinja = """
+      SELECT * from {{ table }};
+    """
 
+# duckdb
 sql = """
-select * from demo;
+SELECT   * exclude (a),  b, c
+FROM
+  demo
+  left join k using(id)
+where b is not null
+"""
+
+# CTE
+sql = """
+with a as (select * from {{ name1 }})
+SELECT *
+from {{ name2 }}
 """

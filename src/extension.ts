@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
-import * as sqlFormatter from "sql-formatter";
+import { format1 as format } from "./format";
 
 const NAME = "py-inline-sql";
 
@@ -21,11 +21,7 @@ function sqlInlineFormat() {
 
   let seletedText = editor?.document.getText(wordRange) as string;
 
-  let formattedText = sqlFormatter.format(seletedText, {
-    keywordCase: "upper",
-    language: "sql",
-    tabWidth: 2,
-  });
+  let formattedText = format(seletedText);
 
   const startWidth = cursorPosition?.character ?? 0;
   const spaceWidth = seletedText.search(/\S/);
@@ -34,6 +30,8 @@ function sqlInlineFormat() {
   console.log("textFormatted:\n", formattedText);
 
   let indentedText = indent(formattedText, startWidth + spaceWidth);
+
+  indentedText = " ".repeat(spaceWidth) + indentedText.trimStart();
   if (seletedText.endsWith("\n")) {
     indentedText += "\n";
   }
