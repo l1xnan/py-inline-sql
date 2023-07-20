@@ -1,29 +1,30 @@
 {
-  "name": "py-inline-sql",
-  "displayName": "py-inline-sql",
-  "description": "",
+  "name": "inline-sql-py",
+  "displayName": "Inline SQL for Python",
+  "description": "Inline SQL for Python",
   "version": "0.0.1",
+  "publisher": "l1xnan",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/l1xnan/vscode-extension-samples"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
     "Programming Languages"
   ],
-  "scripts": {
-    "convert": "node ./convert.js"
-  },
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
   "contributes": {
-    "languages": [
+    "commands": [
       {
-        "id": "inline-sql",
-        "aliases": [
-          "inline-sql"
-        ],
-        "extensions": [
-          ".py",
-          ".ipynb"
-        ],
-        "configuration": "./language-configuration.json"
+        "command": "inline-sql-py.sqlInlineFormat",
+        "title": "SQL Inline Format"
       }
     ],
     "grammars": [
@@ -37,9 +38,39 @@
           "meta.embedded.block.sql": "sql"
         }
       }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "inline-sql-py.sqlInlineFormat",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "editor/context": [
+      {
+        "command": "inline-sql-py.sqlInlineFormat",
+        "when": "editorHasSelection"
+      }
     ]
   },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint \"src/**/*.ts\"",
+    "watch": "tsc -watch -p ./",
+    "convert": "node ./convert.js"
+  },
   "devDependencies": {
-    "js-yaml": "^4.1.0"
+    "@types/node": "^16.18.38",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^8.26.0",
+    "js-yaml": "^4.1.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "sql-formatter": "^12.2.3"
   }
 }

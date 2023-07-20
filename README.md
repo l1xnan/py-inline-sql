@@ -65,5 +65,6 @@ You can author your README using Visual Studio Code. Here are some useful editor
 
 ## 参考
 - [better-python-string-sql](https://github.com/Submersible/better-python-string-sql)
-
+- [SQLTools](https://github.com/mtxr/vscode-sqltools)
+- [Inline SQL Formatter](https://github.com/vulkd/vscode-inline-sql-formatter)
 **Enjoy!**
