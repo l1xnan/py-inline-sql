@@ -1,22 +1,17 @@
 # Inline SQL for Python
 
-为嵌入在Python字符串中的SQL提供代码高亮和格式化功能
+为嵌入在 Python 字符串中的 SQL 提供代码高亮和格式化功能
 
-## 特性
+## 用法
 
-1. Adds syntax highlight support SQL strings embedded in Python strings.
-2. Format SQL strings embedded in Python strings.
-
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- 语法高亮: 不需要配置
+- 格式化
+  - 选中 SQL，右键选择 `Inline SQL Format` 选项；
+  - 选中 SQL，打开命令面板，选择 `Inline SQL Format` 操作；
 
 ## Extension Settings
 
-
 ## Known Issues
-
 
 ## Release Notes
 

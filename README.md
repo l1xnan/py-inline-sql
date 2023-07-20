@@ -1,22 +1,19 @@
 # Inline SQL for Python
 
+[中文](./README.zh.md)
+
 Syntax highlight and format SQL strings embedded in Python strings.
 
-## Features
+## Usage
 
-1. Adds syntax highlight support SQL strings embedded in Python strings.
-2. Format SQL strings embedded in Python strings.
-
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Syntax highlighting: No configuration is required.
+- Format
+  - Select SQL, right-click and select the 'Inline SQL Format' option.
+  - Select SQL, open the command panel, select 'Inline SQL Format' action.
 
 ## Extension Settings
 
-
 ## Known Issues
-
 
 ## Release Notes
 
