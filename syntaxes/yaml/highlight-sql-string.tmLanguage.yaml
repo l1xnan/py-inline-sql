@@ -5,7 +5,7 @@ injectionSelector: L:string.quoted.multi.python, L:string.quoted.single.python,
   punctuation.definition.comment.python)
 patterns:
   - name: meta.embedded.block.sql
-    begin: \s*((?i)(explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace))
+    begin: \s*((?i)(explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace|with.*?as))
     end: ;|(?="""|"|--|((?i)(explain|alter|analyze|attach|begin|commit|create|delete|detach|drop|insert|pragma|reindex|release|rollback|savepoint|select|update|vacuum|replace)))
     beginCaptures:
       "1":
