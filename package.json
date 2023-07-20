@@ -1,5 +1,5 @@
 {
-  "name": "inline-sql-py",
+  "name": "py-inline-sql",
   "displayName": "Inline SQL for Python",
   "description": "Inline SQL for Python",
   "version": "0.0.1",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/l1xnan/vscode-extension-samples"
+    "url": "https://github.com/l1xnan/py-inline-sql"
   },
   "engines": {
     "vscode": "^1.80.0"
@@ -23,7 +23,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "inline-sql-py.sqlInlineFormat",
+        "command": "py-inline-sql.sqlInlineFormat",
         "title": "Inline SQL Format"
       }
     ],
@@ -42,13 +42,13 @@
     "menus": {
       "commandPalette": [
         {
-          "command": "inline-sql-py.sqlInlineFormat",
+          "command": "py-inline-sql.sqlInlineFormat",
           "when": "editorHasSelection"
         }
       ],
       "editor/context": [
         {
-          "command": "inline-sql-py.sqlInlineFormat",
+          "command": "py-inline-sql.sqlInlineFormat",
           "when": "editorHasSelection",
           "group": "1_modification"
         }

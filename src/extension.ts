@@ -3,7 +3,7 @@
 import * as vscode from "vscode";
 import * as sqlFormatter from "sql-formatter";
 
-const NAME = "inline-sql-py";
+const NAME = "py-inline-sql";
 
 // Inline SQL Format
 function sqlInlineFormat() {
