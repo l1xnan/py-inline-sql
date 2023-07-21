@@ -31,7 +31,7 @@ if True:
 
 # duckdb
 sql = """
-SELECT   * exclude (a),  b, c
+SELECT   * exclude (a),  b, c, "中文"
 FROM
   demo
   left join k using(id)
