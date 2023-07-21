@@ -2,7 +2,7 @@
   "name": "py-inline-sql",
   "displayName": "Inline SQL for Python",
   "description": "Inline SQL for Python",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "l1xnan",
   "private": true,
   "license": "MIT",
@@ -14,8 +14,10 @@
     "vscode": "^1.73.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Formatters"
   ],
+  "icon": "icons/icon.png",
   "activationEvents": [
     "onLanguage:python"
   ],

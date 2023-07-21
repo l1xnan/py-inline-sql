@@ -11,6 +11,39 @@ Syntax highlight and format SQL strings embedded in Python strings.
   - Select SQL, right-click and select the 'Inline SQL Format' option.
   - Select SQL, open the command panel, select 'Inline SQL Format' action.
 
+Python indentation can be handled automatically, example:
+
+```python
+if cond:
+    sql = """
+    select * from demo1 union select * from demo2;
+    """
+```
+
+After formatting:
+
+```python
+# Bad:
+if cond:
+    sql = """
+    select *
+from demo1
+union
+select *
+from demo2;
+    """
+
+# Good
+if True:
+    sql = """
+    select *
+    from demo1
+    union
+    select *
+    from demo2;
+    """
+```
+
 ## Extension Settings
 
 ## Known Issues
