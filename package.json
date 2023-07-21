@@ -2,7 +2,7 @@
   "name": "py-inline-sql",
   "displayName": "Inline SQL for Python",
   "description": "Inline SQL for Python",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "l1xnan",
   "private": true,
   "license": "MIT",
@@ -11,7 +11,7 @@
     "url": "https://github.com/l1xnan/py-inline-sql"
   },
   "engines": {
-    "vscode": "^1.80.0"
+    "vscode": "^1.73.0"
   },
   "categories": [
     "Programming Languages"
