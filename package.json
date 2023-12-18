@@ -2,7 +2,7 @@
   "name": "py-inline-sql",
   "displayName": "Inline SQL for Python",
   "description": "Inline SQL for Python",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "l1xnan",
   "private": true,
   "license": "MIT",
